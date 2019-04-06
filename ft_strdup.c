@@ -18,10 +18,13 @@ char		*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	mas = (char *)malloc(sizeof(s1));
-	if ((void *)0 == mas)
-		return (mas);
-	while (s1[i] != '\0')
+	while (s1[i])
+		i++;
+	mas = (char *)malloc(sizeof(char) * (i + 1));
+	if (!mas)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
 		mas[i] = s1[i];
 		i++;

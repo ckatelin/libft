@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			ft_count(int n)
+static int			ft_count(int n)
 {
 	int		i;
 
@@ -25,7 +25,7 @@ int			ft_count(int n)
 	return (i);
 }
 
-int			ft_power(int n)
+static int			ft_power(int n)
 {
 	int		pwd;
 
@@ -46,7 +46,13 @@ char		*ft_itoa(int n)
 	int		k;
 
 	pwd = ft_power(n);
-	mas = (char *)malloc(sizeof(char) * (ft_count(n) + 2));
+	if (n < 0)
+		mas = (char *)malloc(sizeof(char) * (ft_count(n) + 2));
+	else
+		mas = (char *)malloc(sizeof(char) * (ft_count(n) + 1));
+
+	if (!mas)
+		return (NULL);
 	i = 0;
 	if (n < 0)
 		mas[i++] = '-';

@@ -16,7 +16,9 @@ char		*ft_strnew(size_t size)
 {
 	unsigned char	*mas;
 
-	mas = malloc(size);
-	ft_bzero(mas, size);
+	mas = (unsigned char *)malloc(size + 1);
+	if (!mas)
+		return (NULL);
+	ft_bzero(mas, size + 1);
 	return ((char *)mas);
 }

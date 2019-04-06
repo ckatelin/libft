@@ -20,6 +20,7 @@ long int		ft_atoi(const char *str)
 	i = 0;
 	res = 0;
 	mns = 1;
+	ret = 0;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
 			str[i] == '\f' || str[i] == '\v' || str[i] == '\r')
 		i++;
@@ -35,7 +36,7 @@ long int		ft_atoi(const char *str)
 		i++;
 		ret = res * mns;
 	}
-	if (((res * 10 + str[i] - '0') * mns == 922337203685477580 && str[i+1] > '7' && str[i+1] <= '9') || ((res * 10 + str[i] - '0') * mns > 922337203685477580 && str[i+1] >= '0' && str[i+1] <= '9') )
+	if (((res * 10 + str[i] - '0') * mns == 922337203685477580 && str[i+1] > '7' && str[i+1] <= '9') || ((res * 10 + str[i] - '0') * mns > 922337203685477580 && str[i+1] >= '0' && str[i+1] <= '9'))
 		return (9223372036854775807);
 	else if ((res * 10 + str[i] - '0') * mns <= -922337203685477580 && str[i+1] >= '8' && str[i+1] <= '9') 
 		return (-9223372036854775807 - 1);
