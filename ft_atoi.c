@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+long int		ft_atoi(const char *str)
 {
 	int mns;
-	int res;
+	long int res;
 	int i;
+	long int ret;
 
 	i = 0;
 	res = 0;
@@ -28,8 +29,15 @@ int		ft_atoi(const char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (str[i+1]  && ((res * 10 + str[i] - '0' == 922337203685477580 && str[i+1] > '7' && str[i+1] <= '9') || (res * 10 + str[i] - '0' > 922337203685477580 && str[i+1] >= '0' && str[i+1] <= '9') || (res * 10 + str[i] - '0' <= -922337203685477580 && str[i+1] >= '8' && str[i+1] <= '9')))
+			break ;
 		res = res * 10 + str[i] - '0';
 		i++;
+		ret = res * mns;
 	}
-	return (res * mns);
+	if (((res * 10 + str[i] - '0') * mns == 922337203685477580 && str[i+1] > '7' && str[i+1] <= '9') || ((res * 10 + str[i] - '0') * mns > 922337203685477580 && str[i+1] >= '0' && str[i+1] <= '9') )
+		return (9223372036854775807);
+	else if ((res * 10 + str[i] - '0') * mns <= -922337203685477580 && str[i+1] >= '8' && str[i+1] <= '9') 
+		return (-9223372036854775807 - 1);
+	return (ret);
 }
