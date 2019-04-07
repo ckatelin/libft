@@ -46,11 +46,7 @@ char		*ft_itoa(int n)
 	int		k;
 
 	pwd = ft_power(n);
-	if (n < 0)
-		mas = (char *)malloc(sizeof(char) * (ft_count(n) + 2));
-	else
-		mas = (char *)malloc(sizeof(char) * (ft_count(n) + 1));
-
+	mas = (char *)malloc(sizeof(char) * (ft_count(n) + 1));
 	if (!mas)
 		return (NULL);
 	i = 0;
