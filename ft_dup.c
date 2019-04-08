@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_dup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 20:12:26 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/08 15:05:17 by ckatelin         ###   ########.fr       */
+/*   Created: 2019/04/08 14:41:37 by ckatelin          #+#    #+#             */
+/*   Updated: 2019/04/08 14:47:06 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+void	*ft_dup(void const *content, size_t content_size)
 {
-	size_t	i;
-	char	*s1;
-
-	i = 0;
-	if (s && (*f))
-	{
-		while (s[i])
-			i++;
-	}
-	s1 = ft_strnew(i);
-	if (s1 && (*f))
-	{
-		i = 0;
-		while (s[i])
-		{
-			s1[i] = (*f)(s[i]);
-			i++;
-		}
-		s1[i] = '\0';
-	}
-	return (s1);
+		unsigned char	*str1;
+		unsigned char	*str2;
+		void			*new;
+	
+		if (!(new = ft_memalloc(content_size)))
+			return (NULL);
+		str1 = (unsigned char*)content;
+		str2 = (unsigned char*)new;
+		while (*str1)
+			*(str2++) = *(str1++);
+		return (str2);
 }

@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 20:35:59 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/05 20:46:53 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:30:08 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,13 @@
 
 char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*mas;
 
-	mas = ft_strnew(len);
-	if (mas)
-	{
-		i = 0;
-		while (i < len && s[start])
-		{
-			mas[i] = s[start];
-			i++;
-			start++;
-		}
-		mas[i] = '\0';
-	}
+	mas = ft_memalloc(len + 1);
+	if (mas && s)
+		mas = ft_strncpy(mas, (char *)s + start, len);
 	else
 		return (NULL);
 	return (mas);
 }
+

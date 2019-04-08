@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 19:35:01 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/06 13:29:55 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:42:46 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,36 +82,19 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list	*ft_lstnew(void const *content, size_t content_size);
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstadd(t_list **alst, t_list *new);
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem));
-
-char	*ft_strupcase(char *str);
-char	*ft_strlowcase(char *str);
-char	*ft_strcapitalize(char *str);
-int	ft_str_is_alpha(char *str);
-int	ft_str_is_numeric(char *str);
-int	ft_str_is_lowercase(char *str);
-int	ft_str_is_uppercase(char *str);
-int	ft_str_is_printable(char *str);
-//size_t	strlcpy(char *restrict dst, const char *restrict src, size_t dstsize);
-char    *ft_itoa_base(int value, int base);
-//void		fprime(int nb);
-//void    ft_list_foreach(t_list *begin_list, void (*f)(void *));
-//void    ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
-//char	**ft_split(char *str);
-//int    *sort_int_tab(int *tab, unsigned int size);
-//t_list	*sort_list(t_list *lst, int (*cmp)(int, int));
-//int     add_prime_sum(int num);
-//void epur_str(char *str);
-//int ft_atoi_base(const char *str, int base);
-//int	ft_list_size(t_list *begin_list);
-//int     *ft_range(int start, int end);
-//void		print_hex(int num);
-//void    rstr_capitalizer(char *str);
-//int     power_of_2(int  num);
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+char				*ft_strupcase(char *str);
+char				*ft_strlowcase(char *str);
+int					ft_str_is_alpha(char *str);
+int					ft_str_is_numeric(char *str);
+int					ft_str_is_lowercase(char *str);
+int					ft_str_is_uppercase(char *str);
+int					ft_str_is_printable(char *str);
+void				*ft_dup(void const *content, size_t content_size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 21:52:19 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/06 13:32:56 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:25:30 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int			ft_count(int n)
 {
-	int		i;
+	int				i;
 
 	i = 0;
 	while (n > 9 || n < -9)
@@ -27,7 +27,7 @@ static int			ft_count(int n)
 
 static int			ft_power(int n)
 {
-	int		pwd;
+	int				pwd;
 
 	pwd = 1;
 	while (n > 9 || n < -9)
@@ -38,12 +38,12 @@ static int			ft_power(int n)
 	return (pwd);
 }
 
-char		*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
-	int		i;
-	char	*mas;
-	int		pwd;
-	int		k;
+	int				i;
+	char			*mas;
+	int				pwd;
+	int				k;
 
 	pwd = ft_power(n);
 	mas = (char *)malloc(sizeof(char) * (ft_count(n) + 1));

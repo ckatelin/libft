@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 21:42:06 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/06 15:24:35 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:15:55 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static size_t		ft_countstr(char *s, char c)
 {
-	int		i;
-	int		countstr;
+	int				i;
+	int				countstr;
 
 	i = 0;
 	countstr = 0;
@@ -46,19 +46,21 @@ static size_t		len(const char *s, size_t i, char c)
 	return (count);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
-	char	**mas;
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	size_t	all;
+	char			**mas;
+	size_t			i;
+	size_t			j;
+	size_t			k;
+	size_t			all;
 
 	i = 0;
 	k = 0;
+	if (!s)
+		return (NULL);
 	mas = (char **)malloc(sizeof(char *) * (ft_countstr((char *)s, c) + 1));
 	if (!mas)
-		return (NULL);
+			return (NULL);
 	while (k < (all = ft_countstr((char *)s, c)))
 	{
 		j = 0;

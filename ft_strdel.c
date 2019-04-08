@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:51:20 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/05 19:53:53 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 16:26:19 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	free(*as);
-	*as = NULL;
+	if ((void *)as && (void *)*as)
+	{
+		free((void *)*as);
+		*as = 0;
+	}
 }

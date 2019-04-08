@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 20:25:42 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/05 20:30:50 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 15:05:49 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	while (s[i])
-		i++;
+	if (s && (*f))
+	{
+		while (s[i])
+			i++;
+	}
 	mas = ft_strnew(i);
-	if (mas)
+	if (mas && (*f))
 	{
 		i = 0;
 		while (s[i])
