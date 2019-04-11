@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 19:35:01 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/08 14:42:46 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:12:26 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,5 @@ int					ft_str_is_numeric(char *str);
 int					ft_str_is_lowercase(char *str);
 int					ft_str_is_uppercase(char *str);
 int					ft_str_is_printable(char *str);
-void				*ft_dup(void const *content, size_t content_size);
 
 #endif

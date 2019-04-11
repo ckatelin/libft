@@ -6,7 +6,7 @@
 /*   By: ckatelin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 20:35:59 by ckatelin          #+#    #+#             */
-/*   Updated: 2019/04/08 16:30:08 by ckatelin         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:19:30 by ckatelin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	return (mas);
 }
-
